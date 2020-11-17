@@ -5,9 +5,9 @@ import pandas as pd
 import glob
 
 
-import_file_path = '/Users/asd2f/Python/sample-1.xlsx'
+import_file_path = '' #読み込み元
 excel_sheet_name = '発注管理表'
-export_file_path = '/Users/asd2f/Python/to_excel/output_kino3'
+export_file_path = '' #出力先
 
 df_order = pd.read_excel(import_file_path, sheet_name = excel_sheet_name)
 # print(df_order)
@@ -22,22 +22,4 @@ company_name = df_order['会社名'].unique()
 for i in company_name:
 	df_order_company = df_order[df_order['会社名'] == i]
 	# print(df_order_company)
-	df_order_company.to_excel('/Users/asd2f/Python/to_excel' + '/' + i + '.xlsx')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	df_order_company.to_excel('test' + '/' + i + '.xlsx')
